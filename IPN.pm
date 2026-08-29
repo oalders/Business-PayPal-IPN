@@ -378,9 +378,9 @@ LWP - to make HTTP requests
 
 =item *
 
-Crypt::SSLeay - to enable LWP perform https (SSL) requests. If for any reason you
-are not able to install Crypt::SSLeay, you will need to update $Business::PayPal::IPN::GTW to
-proper, non-ssl URL.
+LWP::Protocol::https - to enable LWP to perform https (SSL) requests, which
+PayPal now requires. (Older releases relied on Crypt::SSLeay for this; modern
+LWP uses LWP::Protocol::https + IO::Socket::SSL instead.)
 
 =back
 
