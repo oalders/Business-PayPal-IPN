@@ -2,6 +2,12 @@ Revision history for Perl extension Business::PayPal::IPN.
 
 $Id: Changes,v 1.8 2003/08/19 07:47:08 sherzodr Exp $
 
+  - Drop the obsolete Crypt::SSLeay prerequisite. The module never loaded it;
+    it was only documented as an optional way to give LWP HTTPS support. The XS
+    Crypt::SSLeay no longer builds on OpenSSL 3, so the hard prereq made the
+    distribution uninstallable on modern Perl. HTTPS support now comes from
+    LWP::Protocol::https + IO::Socket::SSL.
+
 1.94, Tuedays, August 19, 2003
   - $SUPPORTEDV is not 1.5.
 
